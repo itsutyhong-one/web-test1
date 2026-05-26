@@ -42,7 +42,7 @@ body {
 
 .logo {
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: var(--accent2);
   text-shadow: 2px 2px #7F7F00;
 }
@@ -52,7 +52,7 @@ body {
   text-decoration: none;
   color: var(--text-muted);
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   text-shadow: 1px 1px #000;
   transition: color 0.1s, text-shadow 0.1s;
 }
