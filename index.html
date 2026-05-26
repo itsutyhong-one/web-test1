@@ -19,43 +19,6 @@
         <li><a href="#" id="tetris-btn">🎮 테트리스</a></li>
       </ul>
     </nav>
-
-  <!-- 테트리스 모달 -->
-  <div id="tetris-modal" class="tetris-overlay">
-    <div class="tetris-modal">
-      <div class="tetris-header">
-        <span class="tetris-title">TETRIS</span>
-        <button id="tetris-close">✕</button>
-      </div>
-      <div class="tetris-body">
-        <canvas id="tetris-canvas" width="200" height="400"></canvas>
-        <div class="tetris-side">
-          <div class="tetris-info-box">
-            <div class="tetris-label">SCORE</div>
-            <div class="tetris-value" id="tetris-score">0</div>
-          </div>
-          <div class="tetris-info-box">
-            <div class="tetris-label">LEVEL</div>
-            <div class="tetris-value" id="tetris-level">1</div>
-          </div>
-          <div class="tetris-info-box">
-            <div class="tetris-label">NEXT</div>
-            <canvas id="tetris-next" width="80" height="80"></canvas>
-          </div>
-          <div class="tetris-controls">
-            <div class="tetris-label">CONTROLS</div>
-            <p>← → 이동</p>
-            <p>↑ 회전</p>
-            <p>↓ 내리기</p>
-            <p>Space 즉시낙하</p>
-            <p>P 일시정지</p>
-          </div>
-          <button id="tetris-restart" class="tetris-btn-restart">RESTART</button>
-        </div>
-      </div>
-      <div id="tetris-message" class="tetris-message"></div>
-    </div>
-  </div>
     <div class="hero-content">
       <p class="greeting">안녕하세요, 저는</p>
       <h1 class="name">홍혜림<span class="accent">.</span></h1>
@@ -155,6 +118,43 @@
   <footer class="footer">
     <p>© 2026 홍혜림 · Designed &amp; Built with ♡</p>
   </footer>
+
+  <!-- 테트리스 모달 -->
+  <div id="tetris-modal" class="tetris-overlay">
+    <div class="tetris-modal">
+      <div class="tetris-header">
+        <span class="tetris-title">TETRIS</span>
+        <button id="tetris-close">✕</button>
+      </div>
+      <div class="tetris-body">
+        <canvas id="tetris-canvas" width="200" height="400"></canvas>
+        <div class="tetris-side">
+          <div class="tetris-info-box">
+            <div class="tetris-label">SCORE</div>
+            <div class="tetris-value" id="tetris-score">0</div>
+          </div>
+          <div class="tetris-info-box">
+            <div class="tetris-label">LEVEL</div>
+            <div class="tetris-value" id="tetris-level">1</div>
+          </div>
+          <div class="tetris-info-box">
+            <div class="tetris-label">NEXT</div>
+            <canvas id="tetris-next" width="80" height="80"></canvas>
+          </div>
+          <div class="tetris-controls">
+            <div class="tetris-label">CONTROLS</div>
+            <p>← → 이동</p>
+            <p>↑ 회전</p>
+            <p>↓ 내리기</p>
+            <p>Space 즉시낙하</p>
+            <p>P 일시정지</p>
+          </div>
+          <button id="tetris-restart" class="tetris-btn-restart">RESTART</button>
+        </div>
+      </div>
+      <div id="tetris-message" class="tetris-message"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
