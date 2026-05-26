@@ -262,6 +262,132 @@ body {
 .contact-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 .contact-value { font-family: 'Fira Code', monospace; font-size: 0.9rem; color: var(--accent); }
 
+/* ── TETRIS ── */
+.tetris-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+}
+.tetris-overlay.active { display: flex; }
+
+.tetris-modal {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: min(520px, 95vw);
+  box-shadow: 0 0 60px rgba(88,166,255,0.2);
+  position: relative;
+}
+
+.tetris-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.tetris-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 4px;
+}
+.tetris-header button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.tetris-header button:hover { background: var(--bg3); color: var(--text); }
+
+.tetris-body {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+#tetris-canvas {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.tetris-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.tetris-info-box {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+}
+.tetris-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-bottom: 0.2rem;
+}
+.tetris-value {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+#tetris-next {
+  display: block;
+  border-radius: 4px;
+}
+
+.tetris-controls {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.tetris-btn-restart {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-family: 'Fira Code', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: opacity 0.2s;
+  width: 100%;
+}
+.tetris-btn-restart:hover { opacity: 0.8; }
+
+.tetris-message {
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: var(--accent2);
+  min-height: 1.6rem;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 /* ── FOOTER ── */
 .footer {
   text-align: center;
