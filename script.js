@@ -134,11 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#f4f6fb';
+    ctx.fillStyle = '#1A1A1A';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // grid
-    ctx.strokeStyle = 'rgba(180,190,210,0.5)';
+    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
     ctx.lineWidth = 0.5;
     for (let r = 0; r < ROWS; r++) {
       ctx.beginPath(); ctx.moveTo(0, r*BLOCK); ctx.lineTo(canvas.width, r*BLOCK); ctx.stroke();
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // next
     nCtx.clearRect(0, 0, nextCvs.width, nextCvs.height);
-    nCtx.fillStyle = '#eceef5';
+    nCtx.fillStyle = '#000';
     nCtx.fillRect(0, 0, nextCvs.width, nextCvs.height);
     const ns = next.shape;
     const ox = Math.floor((4 - ns[0].length) / 2);

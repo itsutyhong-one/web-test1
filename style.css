@@ -1,16 +1,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:      #dfe3ef;
-  --bg2:     #d5d9e8;
-  --bg3:     #eef0f7;
-  --accent:  #4f7ef8;
-  --accent2: #22c55e;
-  --text:    #1a1f2e;
-  --text-muted: #5a6278;
-  --border:  #c5cade;
-  --radius:  12px;
-  --shadow:  0 2px 16px rgba(79,126,248,0.10);
+  --bg:          #1A1A1A;
+  --bg2:         #2D2D2D;
+  --bg3:         #3C3C3C;
+  --stone:       #8B8B8B;
+  --stone-dark:  #373737;
+  --stone-light: #DBDBDB;
+  --accent:      #7EC850;
+  --accent2:     #FFFF55;
+  --sky:         #7DC6FF;
+  --dirt:        #866043;
+  --grass:       #5D9E2C;
+  --text:        #FFFFFF;
+  --text-muted:  #AAAAAA;
+  --radius:      0px;
 }
 
 html { scroll-behavior: smooth; }
@@ -32,28 +36,27 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2.5rem;
-  background: rgba(223,227,239,0.90);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 8px rgba(79,126,248,0.06);
+  background: #000;
+  border-bottom: 4px solid #373737;
 }
 
 .logo {
-  font-family: 'Fira Code', monospace;
-  font-size: 1.2rem;
-  color: var(--accent);
-  font-weight: 600;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.78rem;
+  color: var(--accent2);
+  text-shadow: 2px 2px #7F7F00;
 }
 
-.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
 .nav-links a {
   text-decoration: none;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  transition: color 0.2s;
-  font-weight: 500;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  text-shadow: 1px 1px #000;
+  transition: color 0.1s, text-shadow 0.1s;
 }
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { color: var(--accent2); text-shadow: 1px 1px #7F7F00; }
 
 /* ── HERO ── */
 .hero {
@@ -64,89 +67,110 @@ body {
   justify-content: center;
   text-align: left;
   position: relative;
-  padding: 6rem 2.5rem 4rem;
-  max-width: 100%;
-  background:
-    radial-gradient(ellipse 60% 55% at 70% 40%, rgba(79,126,248,0.14) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 35% at 90% 85%, rgba(34,197,94,0.09) 0%, transparent 60%),
-    var(--bg);
+  padding: 6rem 2.5rem 7rem;
+  background: linear-gradient(180deg, #7DC6FF 0%, #A8D8F0 70%, #B8E4FF 100%);
   overflow: hidden;
 }
 
-/* dot 패턴 */
+/* 픽셀 격자 */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(80,100,150,0.38) 1.5px, transparent 1.5px);
-  background-size: 26px 26px;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
   pointer-events: none;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 700px; }
+/* 잔디 + 흙 블록 */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 56px;
+  background: linear-gradient(
+    to bottom,
+    var(--grass) 0%, var(--grass) 35%,
+    var(--dirt)  35%, var(--dirt)  100%
+  );
+  border-top: 4px solid #000;
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
 
 .greeting {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-  font-weight: 300;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.78rem;
+  color: #2D4A1A;
+  text-shadow: 1px 1px rgba(0,0,0,0.4);
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
 }
 
 .name {
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 700;
-  letter-spacing: -2px;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  color: var(--text);
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  text-shadow: 4px 4px #000, 3px 3px #444;
 }
 
-.accent { color: var(--accent); }
+.accent { color: var(--accent); text-shadow: 3px 3px #2E5E00; }
 
 .title-badge {
   display: inline-block;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 0.4rem 1.2rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-  font-family: 'Fira Code', monospace;
-  box-shadow: var(--shadow);
+  background: #373737;
+  border: 3px solid #000;
+  box-shadow: inset -2px -3px #000, inset 2px 2px #555;
+  padding: 0.6rem 1.1rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.82rem;
+  color: var(--accent2);
+  margin-bottom: 2.5rem;
+  text-shadow: 1px 1px #7F7F00;
 }
 
 .btn-primary {
   display: inline-block;
-  padding: 0.75rem 2rem;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.95rem;
+  padding: 0.9rem 2rem;
+  background: #848484;
+  color: var(--accent2);
+  border: 3px solid #000;
+  box-shadow: inset -3px -5px #373737, inset 2px 2px rgba(255,255,255,0.28);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.62rem;
   text-decoration: none;
-  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 18px rgba(79,126,248,0.28);
+  text-shadow: 1px 1px #7F7F00;
+  transition: background 0.1s, box-shadow 0.1s;
+  letter-spacing: 1px;
+  border-radius: 0;
 }
-.btn-primary:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,126,248,0.3); }
+.btn-primary:hover {
+  background: #A0A0A0;
+  box-shadow: inset -3px -5px #555, inset 2px 2px rgba(255,255,255,0.35);
+}
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 5rem;
   left: 2.5rem;
+  z-index: 1;
 }
 .scroll-indicator span {
   display: block;
-  width: 22px; height: 22px;
-  border-right: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
+  width: 14px; height: 14px;
+  border-right: 3px solid #2D4A1A;
+  border-bottom: 3px solid #2D4A1A;
   transform: rotate(45deg);
   animation: bounce 1.4s infinite;
-  opacity: 0.5;
 }
 @keyframes bounce {
-  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.5; }
-  50% { transform: rotate(45deg) translateY(6px); opacity: 0.2; }
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+  50%      { transform: rotate(45deg) translateY(6px); opacity: 0.4; }
 }
 
 /* ── SECTIONS ── */
@@ -154,185 +178,196 @@ body {
 .container { max-width: 1000px; margin: 0 auto; }
 
 .section-title {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.1rem;
+  font-weight: 400;
   margin-bottom: 3rem;
-  letter-spacing: -1px;
   color: var(--text);
+  text-shadow: 3px 3px #000;
+  line-height: 1.6;
 }
 
 /* ── ABOUT ── */
 .about {
-  background:
-    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(79,126,248,0.07) 0%, transparent 70%),
-    var(--bg);
+  background: var(--bg);
   position: relative;
   overflow: hidden;
 }
-
 .about::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(80,100,150,0.30) 1.5px, transparent 1.5px);
-  background-size: 26px 26px;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 16px 16px;
   pointer-events: none;
-  mask-image: radial-gradient(ellipse 60% 80% at 90% 50%, black 0%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 80% at 90% 50%, black 0%, transparent 100%);
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 3rem;
   align-items: start;
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
 }
 
 .avatar-circle {
   width: 160px; height: 160px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: var(--stone);
+  border: 4px solid #000;
+  box-shadow: inset -4px -5px var(--stone-dark), inset 3px 3px rgba(255,255,255,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Fira Code', monospace;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1rem;
+  color: var(--text);
+  text-shadow: 2px 2px #000;
   margin: 0 auto;
-  box-shadow: 0 8px 32px rgba(79,126,248,0.25);
+  border-radius: 0;
 }
 
 .about-text p {
   color: var(--text-muted);
   margin-bottom: 1rem;
-  font-size: 0.97rem;
+  font-size: 0.9rem;
 }
 .about-text p strong { color: var(--text); }
 
 .info-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
 .tag {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.3rem 0.8rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  box-shadow: var(--shadow);
+  background: var(--bg2);
+  border: 2px solid #000;
+  box-shadow: inset -1px -2px #000, inset 1px 1px #555;
+  padding: 0.35rem 0.8rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: var(--accent2);
+  text-shadow: 1px 1px #7F7F00;
+  border-radius: 0;
 }
 
 /* ── SKILLS ── */
 .skills {
-  background:
-    radial-gradient(ellipse 50% 60% at 10% 50%, rgba(34,197,94,0.07) 0%, transparent 70%),
-    var(--bg2);
+  background: var(--bg2);
   position: relative;
   overflow: hidden;
 }
-
 .skills::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(80,100,150,0.30) 1.5px, transparent 1.5px);
-  background-size: 26px 26px;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 16px 16px;
   pointer-events: none;
-  mask-image: radial-gradient(ellipse 70% 70% at 15% 50%, black 0%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 15% 50%, black 0%, transparent 100%);
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
 }
 
 .skill-card {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.8rem 1.5rem;
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: var(--shadow);
+  background: var(--stone);
+  border: 3px solid #000;
+  box-shadow: inset -3px -4px var(--stone-dark), inset 2px 2px rgba(255,255,255,0.22);
+  padding: 1.5rem;
+  border-radius: 0;
+  transition: background 0.1s;
 }
-.skill-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 28px rgba(79,126,248,0.14); }
+.skill-card:hover { background: #9C9C9C; }
 
 .skill-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-.skill-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
-.skill-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+.skill-card h3 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.65rem;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+  text-shadow: 1px 1px #000;
+  line-height: 1.8;
+}
+.skill-card p { font-size: 0.82rem; color: #1A1A1A; margin-bottom: 1rem; }
 
+/* XP 바 스타일 */
 .skill-bar {
-  height: 4px;
-  background: var(--border);
-  border-radius: 2px;
+  height: 10px;
+  background: #000;
+  border: 2px solid #555;
+  border-radius: 0;
   overflow: hidden;
 }
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  border-radius: 2px;
+  background: linear-gradient(180deg, #8AE048 0%, #55BE20 50%, #8AE048 100%);
+  border-radius: 0;
   transition: width 1s ease;
 }
 
 /* ── CONTACT ── */
 .contact {
-  background:
-    radial-gradient(ellipse 55% 45% at 50% 100%, rgba(79,126,248,0.09) 0%, transparent 70%),
-    var(--bg);
+  background: var(--bg);
   position: relative;
   overflow: hidden;
 }
-
 .contact::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(80,100,150,0.30) 1.5px, transparent 1.5px);
-  background-size: 26px 26px;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 16px 16px;
   pointer-events: none;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 100%, black 0%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 100%, black 0%, transparent 100%);
 }
 
 .contact-intro {
   color: var(--text-muted);
   margin-bottom: 2.5rem;
-  font-size: 0.97rem;
-  position: relative;
-  z-index: 1;
+  font-size: 0.9rem;
+  position: relative; z-index: 1;
 }
 
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.2rem;
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
 }
 
 .contact-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  gap: 0.5rem;
+  background: var(--stone);
+  border: 3px solid #000;
+  box-shadow: inset -3px -4px var(--stone-dark), inset 2px 2px rgba(255,255,255,0.22);
   padding: 2rem 1.5rem;
   text-decoration: none;
   color: var(--text);
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: var(--shadow);
+  border-radius: 0;
+  transition: background 0.1s;
 }
-.contact-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 28px rgba(79,126,248,0.14); }
+.contact-card:hover { background: #9C9C9C; }
 
 .contact-icon { font-size: 2rem; }
-.contact-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.contact-value { font-family: 'Fira Code', monospace; font-size: 0.9rem; color: var(--accent); }
+.contact-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: #1A1A1A;
+  letter-spacing: 1px;
+}
+.contact-value {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--accent2);
+  text-shadow: 1px 1px #7F7F00;
+}
 
 /* ── TETRIS ── */
 .tetris-overlay {
@@ -340,21 +375,20 @@ body {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(26,31,46,0.45);
-  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.88);
   align-items: center;
   justify-content: center;
 }
 .tetris-overlay.active { display: flex; }
 
 .tetris-modal {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: #373737;
+  border: 4px solid #000;
+  box-shadow: inset -3px -4px #000, inset 2px 2px #555;
   padding: 1.5rem;
   width: min(520px, 95vw);
-  box-shadow: 0 12px 60px rgba(79,126,248,0.16);
   position: relative;
+  border-radius: 0;
 }
 
 .tetris-header {
@@ -364,23 +398,24 @@ body {
   margin-bottom: 1rem;
 }
 .tetris-title {
-  font-family: 'Fira Code', monospace;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 4px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1rem;
+  color: var(--accent2);
+  text-shadow: 2px 2px #7F7F00;
+  letter-spacing: 3px;
 }
 .tetris-header button {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  font-size: 1.2rem;
+  background: var(--stone);
+  border: 2px solid #000;
+  box-shadow: inset -2px -3px var(--stone-dark), inset 1px 1px rgba(255,255,255,0.28);
+  color: var(--text);
+  font-size: 1rem;
   cursor: pointer;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0;
+  transition: background 0.1s;
 }
-.tetris-header button:hover { background: var(--bg2); color: var(--text); }
+.tetris-header button:hover { background: #9C9C9C; }
 
 .tetris-body {
   display: flex;
@@ -389,8 +424,8 @@ body {
 }
 
 #tetris-canvas {
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  border: 3px solid #000;
+  box-shadow: inset -2px -2px #000, inset 2px 2px #555;
   display: block;
   image-rendering: pixelated;
 }
@@ -398,65 +433,63 @@ body {
 .tetris-side {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
   flex: 1;
 }
 
 .tetris-info-box {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.6rem 1rem;
+  background: #000;
+  border: 2px solid #555;
+  padding: 0.6rem 0.8rem;
 }
 .tetris-label {
-  font-family: 'Fira Code', monospace;
-  font-size: 0.7rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
   color: var(--text-muted);
-  letter-spacing: 2px;
-  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
 }
 .tetris-value {
-  font-family: 'Fira Code', monospace;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1rem;
+  color: var(--accent2);
+  text-shadow: 2px 2px #7F7F00;
 }
 
-#tetris-next {
-  display: block;
-  border-radius: 4px;
-}
+#tetris-next { display: block; }
 
 .tetris-controls {
-  font-size: 0.8rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.48rem;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 2.2;
 }
 
 .tetris-btn-restart {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.6rem 1rem;
-  font-family: 'Fira Code', monospace;
-  font-weight: 700;
-  font-size: 0.85rem;
+  background: var(--stone);
+  color: var(--accent2);
+  border: 2px solid #000;
+  box-shadow: inset -2px -3px var(--stone-dark), inset 1px 1px rgba(255,255,255,0.28);
+  padding: 0.7rem 1rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
   cursor: pointer;
-  letter-spacing: 2px;
-  transition: opacity 0.2s;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px #7F7F00;
+  transition: background 0.1s;
   width: 100%;
+  border-radius: 0;
 }
-.tetris-btn-restart:hover { opacity: 0.8; }
+.tetris-btn-restart:hover { background: #9C9C9C; }
 
 .tetris-message {
   text-align: center;
-  font-family: 'Fira Code', monospace;
-  font-size: 1.1rem;
-  color: var(--accent2);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
   min-height: 1.6rem;
   margin-top: 0.8rem;
-  font-weight: 700;
+  text-shadow: 2px 2px #2E5E00;
   letter-spacing: 2px;
 }
 
@@ -464,16 +497,20 @@ body {
 .footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid var(--border);
+  border-top: 4px solid #000;
+  background: #000;
   color: var(--text-muted);
-  font-size: 0.85rem;
-  background: var(--bg2);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  line-height: 2;
 }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   .navbar { padding: 1rem 1.2rem; }
-  .nav-links { gap: 1.2rem; }
+  .nav-links { gap: 1rem; }
+  .logo { font-size: 0.6rem; }
   .about-grid { grid-template-columns: 1fr; text-align: center; }
   .info-tags { justify-content: center; }
+  .name { font-size: 1.3rem; }
 }
