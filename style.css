@@ -58,6 +58,9 @@ body {
 }
 .nav-links a:hover { color: var(--accent2); text-shadow: 1px 1px #7F7F00; }
 
+.nav-icon { font-family: initial; font-size: 1rem; margin-right: 0.3rem; }
+.nav-kr   { font-family: 'Noto Sans KR', sans-serif; font-size: 0.82rem; font-weight: 600; }
+
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
