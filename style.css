@@ -144,8 +144,9 @@ body {
   color: var(--accent2);
   border: 3px solid #000;
   box-shadow: inset -3px -5px #373737, inset 2px 2px rgba(255,255,255,0.28);
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.62rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
   text-decoration: none;
   text-shadow: 1px 1px #7F7F00;
   transition: background 0.1s, box-shadow 0.1s;
@@ -244,8 +245,9 @@ body {
   border: 2px solid #000;
   box-shadow: inset -1px -2px #000, inset 1px 1px #555;
   padding: 0.35rem 0.8rem;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.5rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
   color: var(--accent2);
   text-shadow: 1px 1px #7F7F00;
   border-radius: 0;
@@ -287,12 +289,13 @@ body {
 
 .skill-icon { font-size: 2rem; margin-bottom: 0.8rem; }
 .skill-card h3 {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.65rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
   margin-bottom: 0.8rem;
   color: var(--text);
   text-shadow: 1px 1px #000;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 .skill-card p { font-size: 0.82rem; color: #1A1A1A; margin-bottom: 1rem; }
 
@@ -462,10 +465,10 @@ body {
 #tetris-next { display: block; }
 
 .tetris-controls {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.48rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  line-height: 2.2;
+  line-height: 2;
 }
 
 .tetris-btn-restart {
@@ -503,8 +506,8 @@ body {
   border-top: 4px solid #000;
   background: #000;
   color: var(--text-muted);
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.55rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.85rem;
   line-height: 2;
 }
 
