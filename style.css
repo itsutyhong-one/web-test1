@@ -87,6 +87,45 @@ body {
   pointer-events: none;
 }
 
+/* ── 픽셀 구름 ── */
+.mc-cloud {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mc-cloud span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  box-shadow:
+    20px  0px 0 0 rgba(255,255,255,0.93),
+    40px  0px 0 0 rgba(255,255,255,0.93),
+    60px  0px 0 0 rgba(255,255,255,0.93),
+     0px 20px 0 0 rgba(255,255,255,0.93),
+    20px 20px 0 0 rgba(255,255,255,0.93),
+    40px 20px 0 0 rgba(255,255,255,0.93),
+    60px 20px 0 0 rgba(255,255,255,0.93),
+    80px 20px 0 0 rgba(255,255,255,0.93),
+     0px 40px 0 0 rgba(255,255,255,0.93),
+    20px 40px 0 0 rgba(255,255,255,0.93),
+    40px 40px 0 0 rgba(255,255,255,0.93),
+    60px 40px 0 0 rgba(255,255,255,0.93),
+    80px 40px 0 0 rgba(255,255,255,0.93),
+    20px 60px 0 0 rgba(255,255,255,0.93),
+    40px 60px 0 0 rgba(255,255,255,0.93),
+    60px 60px 0 0 rgba(255,255,255,0.93);
+}
+
+@keyframes cloud-float {
+  from { transform: translateX(105vw); }
+  to   { transform: translateX(-200px); }
+}
+
+.cloud-1 { top: 14%; animation: cloud-float 60s linear infinite; }
+.cloud-2 { top: 32%; animation: cloud-float 88s linear -44s infinite; }
+
 /* 잔디 + 흙 블록 */
 .hero::after {
   content: '';
