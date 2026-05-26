@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홍혜림 | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <span class="logo">&lt;HHL /&gt;</span>
+      <ul class="nav-links">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#skills">기술</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <p class="greeting">안녕하세요, 저는</p>
+      <h1 class="name">홍혜림<span class="accent">.</span></h1>
+      <p class="title-badge">한전KDN · 대리 · 공공 IT 서비스 개발자</p>
+      <a href="#about" class="btn-primary">더 알아보기</a>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </header>
+
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title">About <span class="accent">Me</span></h2>
+      <div class="about-grid">
+        <div class="about-avatar">
+          <div class="avatar-circle">HHL</div>
+        </div>
+        <div class="about-text">
+          <p>
+            한국전력공사 IT 전문 자회사인 <strong>한전KDN</strong>에서 공공 정보시스템 개발을 담당하고 있습니다.
+          </p>
+          <p>
+            <strong>전자정부프레임워크(eGovFramework)</strong> 기반의 Java &amp; Spring 환경에서
+            공공 서비스의 안정성과 신뢰성을 최우선으로 삼아 개발하고 있습니다.
+          </p>
+          <p>
+            복잡한 기업 요구사항을 체계적으로 분석하고, 표준화된 아키텍처로 구현하는 것을 즐깁니다.
+            공공 IT 인프라가 국민의 삶에 실질적인 가치를 전달할 수 있도록 매일 고민합니다.
+          </p>
+          <div class="info-tags">
+            <span class="tag">📍 한전KDN</span>
+            <span class="tag">💼 대리</span>
+            <span class="tag">🏛️ 공공 IT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">☕</div>
+          <h3>Java</h3>
+          <p>Java SE/EE 기반 백엔드 개발. 객체지향 설계 및 디자인 패턴 적용.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🌿</div>
+          <h3>Spring Framework</h3>
+          <p>Spring MVC, Spring Security, MyBatis 연동으로 엔터프라이즈급 시스템 구축.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🏛️</div>
+          <h3>전자정부프레임워크</h3>
+          <p>공공 정보시스템 표준 프레임워크(eGovFramework) 기반 개발 및 공통 컴포넌트 활용.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗄️</div>
+          <h3>DB &amp; SQL</h3>
+          <p>Oracle, MySQL 등 관계형 DB 설계 및 쿼리 최적화.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+      <p class="contact-intro">업무 협력이나 문의사항이 있으시면 아래로 연락해 주세요.</p>
+      <div class="contact-cards">
+        <a href="tel:0910-6343" class="contact-card">
+          <span class="contact-icon">📞</span>
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">0910-6343</span>
+        </a>
+        <a href="mailto:honghyelim.22@kdn.com" class="contact-card">
+          <span class="contact-icon">✉️</span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">honghyelim.22@kdn.com</span>
+        </a>
+        <a href="https://github.com/hohye8477-sketch" target="_blank" class="contact-card">
+          <span class="contact-icon">🐙</span>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">hohye8477-sketch</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 홍혜림 · Designed &amp; Built with ♡</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
