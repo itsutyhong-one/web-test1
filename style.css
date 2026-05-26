@@ -58,8 +58,8 @@ body {
 }
 .nav-links a:hover { color: var(--accent2); text-shadow: 1px 1px #7F7F00; }
 
-.nav-icon { font-family: initial; font-size: 1rem; margin-right: 0.3rem; }
-.nav-kr   { font-family: 'Noto Sans KR', sans-serif; font-size: 0.82rem; font-weight: 600; }
+.nav-icon { font-family: initial; font-size: 1rem; margin-right: 0.3rem; vertical-align: middle; }
+.nav-kr   { font-family: 'Noto Sans KR', sans-serif; font-size: 0.85rem; font-weight: 600; vertical-align: middle; }
 
 /* ── HERO ── */
 .hero {
@@ -144,7 +144,7 @@ body {
 
 .greeting {
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: #2D4A1A;
   text-shadow: 1px 1px rgba(0,0,0,0.4);
   margin-bottom: 1.2rem;
@@ -286,7 +286,7 @@ body {
   padding: 0.35rem 0.8rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--accent2);
   text-shadow: 1px 1px #7F7F00;
   border-radius: 0;
@@ -336,7 +336,7 @@ body {
   text-shadow: 1px 1px #000;
   line-height: 1.5;
 }
-.skill-card p { font-size: 0.82rem; color: #1A1A1A; margin-bottom: 1rem; }
+.skill-card p { font-size: 0.9rem; color: #1A1A1A; margin-bottom: 1rem; }
 
 /* XP 바 스타일 */
 .skill-bar {
@@ -403,13 +403,13 @@ body {
 .contact-icon { font-size: 2rem; }
 .contact-label {
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   color: #1A1A1A;
   letter-spacing: 1px;
 }
 .contact-value {
   font-family: 'Fira Code', monospace;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--accent2);
   text-shadow: 1px 1px #7F7F00;
 }
@@ -489,7 +489,7 @@ body {
 }
 .tetris-label {
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   color: var(--text-muted);
   letter-spacing: 1px;
   margin-bottom: 0.3rem;
@@ -505,7 +505,7 @@ body {
 
 .tetris-controls {
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 2;
 }
@@ -517,7 +517,7 @@ body {
   box-shadow: inset -2px -3px var(--stone-dark), inset 1px 1px rgba(255,255,255,0.28);
   padding: 0.7rem 1rem;
   font-family: 'Press Start 2P', monospace;
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   cursor: pointer;
   letter-spacing: 1px;
   text-shadow: 1px 1px #7F7F00;
