@@ -163,18 +163,27 @@ body {
 
 .accent { color: var(--accent); text-shadow: 3px 3px #2E5E00; }
 
-.title-badge {
-  display: inline-block;
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-badge {
   background: #373737;
   border: 3px solid #000;
   box-shadow: inset -2px -3px #000, inset 2px 2px #555;
-  padding: 0.6rem 1.1rem;
+  padding: 0.4rem 0.9rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--accent2);
-  margin-bottom: 2.5rem;
   text-shadow: 1px 1px #7F7F00;
+}
+
+.hero-btn-row {
+  margin-top: 1.2rem;
 }
 
 .btn-primary {
